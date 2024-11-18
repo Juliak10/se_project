@@ -12,14 +12,19 @@
     <div class="signup-container">
         <h2>Sign Up</h2>
         <form action="/submit-signup" method="post" enctype="multipart/form-data">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" required>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="first name" required>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="last name" required>
 
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
+
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmpassword" name="confirm password" required>
 
             <label for="dob">Date of Birth</label>
             <input type="date" id="dob" name="dob" required>
@@ -35,18 +40,14 @@
             <label for="mobile">Mobile Number</label>
             <input type="tel" id="mobile" name="mobile" required>
 
-            <label for="emergency">Emergency Number</label>
-            <input type="tel" id="emergency" name="emergency" required>
 
-            <label for="photo">Photo</label>
-            <input type="file" id="photo" name="photo" required>
-
-            <label for="profession">Profession</label>
-            <input type="text" id="profession" name="profession" required>
-
-            <label for="nationality">Nationality</label>
-            <input type="text" id="nationality" name="nationality" required>
-
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="">Select</option>
+                <option value="citizn">Citizn</option>
+                <option value="Staff">Staff</option>
+                
+            </select>
             <button type="submit">Sign Up</button>
         </form>
     </div>
