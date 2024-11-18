@@ -95,7 +95,7 @@ body {
 }
 
 .input-box select::after {
-    content: '\f0d7'; /* FontAwesome arrow */
+    content: '\f0d7'; 
     font-family: 'FontAwesome';
     position: absolute;
     right: 15px;
@@ -123,7 +123,7 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 16px;
-    color: var(--blue-ncs);
+    color: rgba(15, 131, 193, 1);
     font-weight: 600;
     margin-top: 10px;
     transition: all 0.3s ease;
@@ -131,7 +131,7 @@ body {
 
 .btn:hover {
     background: #e0f7fa;
-    color: var(--blue-ncs);
+    color:rgba(15, 131, 193, 1);
 }
 
 .signin-link {
@@ -150,8 +150,4 @@ body {
     text-decoration: underline;
 }
 
-:root {
-    --rich-black: hsla(206, 55%, 11%, 1); /* Rich Black */
-    --blue-ncs: hsla(201, 86%, 41%, 1); /* Blue NCS */
-    --columbia-blue: hsla(194, 27%, 84%, 1); /* Columbia Blue */
-}
+
