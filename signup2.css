@@ -15,11 +15,20 @@ body {
     background: linear-gradient(to top, rgba(15, 131, 193, 1), rgba(204, 221, 226, 2));
 }
 
-.image {
+.sign-in-image {
     width: 150px;
     height: auto;
     position: absolute;  
     top: 150px;  
+    left: 50%;
+    transform: translateX(-50%); 
+    border-radius: 10px;
+}
+.image {
+    width: 140px;
+    height: auto;
+    position: absolute;  
+    top: 0px;  
     left: 50%;
     transform: translateX(-50%); 
     border-radius: 10px;
