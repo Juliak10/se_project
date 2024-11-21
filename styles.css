@@ -8,11 +8,79 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     min-height: 100vh;
     background: linear-gradient(to top, rgba(15, 131, 193, 1), rgba(204, 221, 226, 2));
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5em 1em;
+}
+
+.logo-img {
+    height: 40px;
+    border-radius: 6px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.profile-icon img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.wrapper {
+    padding: 1em;
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.sign-in-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #ddd;
+    margin-bottom: 1em;
+}
+
+.forms-section,
+.others-section {
+    margin: 1em 0;
+}
+
+.form-list {
+    list-style: none;
+    padding: 0;
 }
 
 .wrapper {
