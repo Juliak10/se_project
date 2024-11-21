@@ -28,7 +28,17 @@
 
     <div class="wrapper">
         <div class="profile-header">
-            <img id="profile-pic" class="sign-in-image" src="default-pic.jpg" alt="Profile Picture">
+            <img src="<?php echo $profile_picture; ?>" alt="Profile Picture">
+
+            <img id="preview" alt="Profile Picture Preview">
+
+            <button id="upload-btn">Upload Profile Picture</button>
+
+            <form action="upload.php" method="POST" enctype="multipart/form-data" id="upload-form">
+                <input type="file" name="profile_pic" id="file-upload" accept="image/*">
+                <button type="submit" style="display: none;" id="submit-btn">Submit</button>
+            </form>
+
             <h1 id="user-name">[Full Name]</h1>
             <p id="user-role">[Role]</p>
         </div>
@@ -45,7 +55,37 @@
     </div>
 
     <script>
+        const uploadBtn = document.getElementById('upload-btn');
+        const fileInput = document.getElementById('file-upload');
+        const preview = document.getElementById('preview');
+        const submitBtn = document.getElementById('submit-btn');
+
+        // Show the file input when the upload button is clicked
+        uploadBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Preview the selected image
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Show the preview
+                    submitBtn.style.display = 'inline-block'; // Show the submit button
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+
+
+
+
         const API_URL = 'https://example.com/api/user-profile'; // Replace with your API URL
+
+        
 
         async function fetchProfileData() {
             try {
@@ -53,7 +93,7 @@
                 const data = await response.json();
 
                 // Set the user profile data
-                const profilePic = data.picture || 'default-pic.jpg';
+                const profilePic = data.Picture || 'default-pic.jpg';
                 document.getElementById('profile-pic').src = profilePic;
                 document.getElementById('nav-profile-pic').src = profilePic;
                 document.getElementById('user-name').textContent = data.fullName || 'Unknown User';

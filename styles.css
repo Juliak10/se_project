@@ -102,6 +102,63 @@ body {
     text-align: center;
 }
 
+ /* Hide the file input by default */
+ #file-upload {
+     display: none;
+ }
+
+ /* Styling for the upload button */
+ #upload-btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: rgba(15, 131, 193, 1);
+    font-weight: 600;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+ }
+  #submit-btn {
+      width: 100%;
+      height: 45px;
+      background: #fff;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      font-size: 16px;
+      color: rgba(15, 131, 193, 1);
+      font-weight: 600;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+  }
+
+   #submit-btn:hover {
+       background: #e0f7fa;
+       color: rgba(15, 131, 193, 1);
+   }
+
+ #upload-btn:hover {
+    background: #e0f7fa;
+    color: rgba(15, 131, 193, 1);
+ }
+
+ /* Optional: Preview image styling */
+ #preview {
+     margin-top: 20px;
+     width: 150px;
+     height: 150px;
+     object-fit: cover;
+     border: 2px solid #ddd;
+     border-radius: 10px;
+     display: none;
+     /* Initially hidden */
+ }
+
 i{
     font-size:xx-large;
 }
