@@ -102,11 +102,16 @@ body {
     text-align: center;
 }
 
+i{
+    font-size:xx-large;
+}
+
 .sign-in-image {
     width: 150px;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
+    height: 150px;
 }
 
 h1 {
