@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+            <li><a href="forms.html">Forms</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div class="profile-icon">
+            <img id="nav-profile-pic" src="default-pic.jpg" alt="Profile Picture">
+        </div>
+    </nav>
+
     <div class="wrapper">
         <div class="profile-header">
             <img id="profile-pic" class="sign-in-image" src="default-pic.jpg" alt="Profile Picture">
@@ -34,7 +52,9 @@
                 const data = await response.json();
 
                 // Set the user profile data
-                document.getElementById('profile-pic').src = data.picture || 'default-pic.jpg';
+                const profilePic = data.picture || 'default-pic.jpg';
+                document.getElementById('profile-pic').src = profilePic;
+                document.getElementById('nav-profile-pic').src = profilePic;
                 document.getElementById('user-name').textContent = data.fullName || 'Unknown User';
                 document.getElementById('user-role').textContent = data.role || 'User';
 
@@ -59,4 +79,5 @@
         fetchProfileData();
     </script>
 </body>
+
 </html>
