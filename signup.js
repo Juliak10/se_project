@@ -1,4 +1,4 @@
-function submitForm() {
+function submitForm1() {
     // Retrieve values from form elements
     var firstName = document.getElementById("fname").value;
     var lastName = document.getElementById("lname").value;

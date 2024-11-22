@@ -13,7 +13,7 @@
     <img src="logo.jpg" alt="logo image" class="image">
     <div class="wrapper">
         <h1>Sign Up</h1>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form id="signup-form" method="post" enctype="multipart/form-data">
             <div class="input-box">
                 <input type="text" id="fname" name="first_name" placeholder="First Name" required>
                 <i class="fas fa-user"></i>
@@ -53,7 +53,7 @@
                 <i class="fas fa-phone"></i>
             </div>
 
-            <button type="button" class="btn" onclick="submitForm()">Sign Up</button>
+            <button type="button" class="btn">Sign Up</button>
         </form>
         <div class="signin-link">
             <p>Already have an account? <a href="signin.html">Sign In here</a></p>
@@ -61,29 +61,87 @@
     </div>
     <script src="signup.js"></script>
     <script type="module">
-        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyCI-jiZK--TwHYoCEPQzXz7NGzcdvhowcw",
-          authDomain: "my-beirut.firebaseapp.com",
-          projectId: "my-beirut",
-          storageBucket: "my-beirut.firebasestorage.app",
-          messagingSenderId: "911192152729",
-          appId: "1:911192152729:web:0309288871a01c80e83608",
-          measurementId: "G-4X5L3L11D0"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
+        const firebaseConfig = {
+            apiKey: "AIzaSyCI-jiZK--TwHYoCEPQzXz7NGzcdvhowcw",
+            authDomain: "my-beirut.firebaseapp.com",
+            projectId: "my-beirut",
+            storageBucket: "my-beirut.firebasestorage.app",
+            messagingSenderId: "911192152729",
+            appId: "1:911192152729:web:0309288871a01c80e83608",
+            measurementId: "G-4X5L3L11D0"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        async function submitForm() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const firstName = document.getElementById("fname").value;
+            const lastName = document.getElementById("lname").value;
+            const phonenumber = document.getElementById("mobile").value;
+            const confirmpassword = document.getElementById("confirmpassword").value;
+            const dateofbirth = document.getElementById("dob").value;
+            const gender = document.getElementById("gender").value;
+
+            // Validate required fields
+            if (!firstName || !lastName || !email || !phonenumber || !password || !confirmpassword || !dateofbirth) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            // Password match check
+            if (password !== confirmpassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Validate password strength
+            if (!isValidPassword(password)) {
+                alert("Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.");
+                return;
+            }
+
+            // Validate phone number length
+            if (phonenumber.length !== 13 || !/^\d+$/.test(phonenumber)) {
+                alert("Phone number must be exactly 13 digits (use 00961 for +961).");
+                return;
+            }
+
+            // Validate email format
+            if (!isValidEmail(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                alert("User created successfully!");
+                console.log("User created:", user);
+                window.location.href = "profile.html";  // Make sure this path is correct
+            } catch (error) {
+                alert("Error: " + error.message);
+                console.error("Error:", error.code, error.message);
+            }
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidPassword(password) {
+            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const signUpButton = document.querySelector(".btn");
+            signUpButton.addEventListener("click", submitForm);
+        });
+    </script>
 </body>
 
 </html>
