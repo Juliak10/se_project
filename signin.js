@@ -18,30 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
             email: email,
             password: password,
         };
-
-        try {
-            // Simulate a backend API call (Replace URL with your backend endpoint)
-            const response = await fetch("https://example.com/api/signin", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(payload),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                
-                alert("Sign-in successful!");
-                window.location.href = "profile.html"; 
-            } else {
-                
-                alert(data.message || "Sign-in failed. Please try again.");
-            }
-        } catch (error) {
-            console.error("Error during sign-in:", error);
-            alert("An error occurred. Please check your internet connection and try again.");
-        }
     });
 });
