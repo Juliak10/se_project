@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="about_us.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="hasan.png" alt="Logo" class="logo-img">
+        </div>
+        <ul class="nav-links flex">
+            <li class="hover-link nav-item">Home
+                <ul class="sub-menu">
+                    <li><a class="nav-btn" href="#">NEWS PANEL</a></li>
+                    <li><a class="nav-btn" href="#">INFORMATION</a></li>
+                </ul>
+            </li>
+            <li><a class="hover-link nav-item" href="#">FORMS AND PETIONS</a></li>
+            <li><a class="hover-link nav-item" href="#">SERVICES</a></li>
+            <li><a class="hover-link nav-item" href="#">ABOUT US</a></li>
+            <li><a class="hover-link nav-item" href="#">DASHBOARD</a></li>
+        </ul>
+        <div class="profile-icon">
+            <i class='bx bx-user'></i>
+        </div>
+    </nav>
     <!-- About Us Section -->
     <section id="about-us" class="about-us">
         <h1>About Us</h1>
@@ -14,19 +37,20 @@
     </section>
 
     <!-- Team Slider Section -->
-    <section id="team" class="wrapper">
+    <section id="team" class="wrapper sec-slider-cal">
         <h2>Meet the Team</h2>
         <div class="slider">
-            <div class="slides">
+            <div align=center class="slides">
                 <!-- Radio buttons for slide control -->
-                <input type="radio" name="slider" id="slide1" checked>
-                <input type="radio" name="slider" id="slide2">
-                <input type="radio" name="slider" id="slide3">
-                <input type="radio" name="slider" id="slide4">
-                <input type="radio" name="slider" id="slide5">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <input type="radio" name="radio-btn" id="radio5">
+                <input type="radio" name="radio-btn" id="radio6">
 
                 <!-- Slides -->
-                <div class="slide">
+                <div class="slide first">
                     <img src="jay.jpg" alt="Jay">
                 </div>
                 <div class="slide">
@@ -39,17 +63,28 @@
                     <img src="saad.png" alt="Saad">
                 </div>
                 <div class="slide">
-                    <img src="alex.jpg" alt="Alex">
+                    <img src="logo.jpg" alt="Alex">
                 </div>
             </div>
 
             <!-- Manual Navigation (using labels as buttons) -->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+                <div class="auto-btn6"></div>
+            </div>
+            <!--manual navigation start-->
             <div class="navigation-manual">
-                <label for="slide1" class="manual-btn"></label>
-                <label for="slide2" class="manual-btn"></label>
-                <label for="slide3" class="manual-btn"></label>
-                <label for="slide4" class="manual-btn"></label>
-                <label for="slide5" class="manual-btn"></label>
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                <label for="radio5" class="manual-btn"></label>
+                <label for="radio6" class="manual-btn"></label>
+            
             </div>
         </div>
     </section>

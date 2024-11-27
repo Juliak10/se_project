@@ -17,6 +17,94 @@ body {
     background: linear-gradient(to top, var(--blue-ncs), var(--columbia-blue));
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    padding: 0.5em 1em;
+
+}
+
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--blue-ncs);
+}
+
+
+.logo-img {
+    height: 60px;
+    border-radius: 6px;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flexbox;
+    gap: 2em;
+
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    color: var(--primary-text-color);
+}
+
+.nav-item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sub-menu li:last-child {
+    border-bottom: none;
+}
+
+.sub-menu li a {
+    text-decoration: none;
+}
+
+
+.profile-icon img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
 .about-us {
     text-align: center;
     padding: 2rem;
@@ -35,53 +123,67 @@ body {
 
 .wrapper {
     padding: 2rem 0;
-    text-align: center;
 }
 
 .wrapper h2 {
     font-size: 2rem;
     color: var(--white);
     margin-bottom: 1rem;
+    margin-left: 10%;
 }
 
-/* Slider Container */
-.slider{
+.sec-slider-cal {
+    padding: 10%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media screen and (max-width: 600px) {
+    .sec-slider-cal {
+        display: block;
+        min-height: 1000px;
+    }
+
+}
+
+.slider {
     width: 800px;
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.slides{
+.slides {
     width: 500%;
     height: 500px;
     display: flex;
 }
 
-.slides input{
+.slides input {
     display: none;
-    
+
 }
 
-.slide{
+.slide {
     width: 20%;
     transition: 2s;
 }
 
-.slide img{
+.slide img {
     width: 600px;
     height: 400px;
     cursor: pointer;
 }
 
-
-/* Manual Navigation Buttons */
 .navigation-manual {
     position: absolute;
     width: 800px;
     margin-top: -40px;
     display: flex;
     justify-content: center;
+
 }
 
 .manual-btn {
@@ -92,32 +194,30 @@ body {
     transition: 1s;
 }
 
-/* Hide the navigation buttons when radio is selected */
-.manual-btn:not(:last-child){
+.manual-btn:not(:last-child) {
     margin-right: 40px;
 }
 
-.manual-btn:hover{
+.manual-btn:hover {
     background: rgb(168, 168, 168);
 }
 
-#radio1:checked ~ .first{
+#radio1:checked~.first {
     margin-left: 0;
 }
-#radio2:checked ~ .first{
+
+#radio2:checked~.first {
     margin-left: -20%;
 }
-#radio3:checked ~ .first{
+
+#radio3:checked~.first {
     margin-left: -40%;
 }
-#radio4:checked ~ .first{
+
+#radio4:checked~.first {
     margin-left: -60%;
 }
-#radio5:checked ~ .first{
-    margin-left: -80%;
-}
 
-/* Manual button hover effect */
-.manual-btn:hover {
-    background-color: var(--blue-ncs);
+#radio5:checked~.first {
+    margin-left: -80%;
 }
