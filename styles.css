@@ -362,3 +362,15 @@ p {
 .form-list li:last-child {
     border-bottom: none;
 }
+ul, ol {
+    color: var(--white);
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    text-align: center;
+}
