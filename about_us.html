@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="about_us.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <img src="hasan.png" alt="Logo" class="logo-img">
+            <img src="assets/hasan.png" alt="Logo" class="logo-img">
         </div>
         <ul class="nav-links flex">
             <li class="hover-link nav-item">Home
@@ -25,10 +26,12 @@
             <li><a class="hover-link nav-item" href="#">FORMS AND PETIONS</a></li>
             <li><a class="hover-link nav-item" href="services.html">SERVICES</a></li>
             <li><a class="hover-link nav-item" href="about_us.html">ABOUT US</a></li>
-            <li><a class="hover-link nav-item" href="#">DASHBOARD</a></li>
+            <li><a class="hover-link nav-item dashboard" href="#">DASHBOARD</a></li>
         </ul>
         <div class="profile-icon">
-            <i class='bx bx-user'></i>
+            <a href="profile.html">
+                <i class='bx bx-user'></i>
+            </a>
         </div>
     </nav>
     <!-- About Us Section -->
@@ -57,10 +60,10 @@
     </section>
 
     <!-- Team Slider Section -->
-    <section id="team" class="wrapper sec-slider-cal">
+    <section id="team" class="sec-slider-cal">
         <h2>Meet the Team</h2>
         <div class="slider">
-            <div align=center class="slides">
+            <div class="slides">
                 <!-- Radio buttons for slide control -->
                 <input type="radio" name="radio-btn" id="radio1">
                 <input type="radio" name="radio-btn" id="radio2">
@@ -71,19 +74,19 @@
 
                 <!-- Slides -->
                 <div class="slide first">
-                    <img src="jay.jpg" alt="Jay">
+                    <img src="assets/jay.jpg" alt="Jay">
                 </div>
                 <div class="slide">
-                    <img src="haya.jpg" alt="Haya">
+                    <img src="assets/haya.jpg" alt="Haya">
                 </div>
                 <div class="slide">
-                    <img src="daoud.png" alt="Daoud">
+                    <img src="assets/daoud.png" alt="Daoud">
                 </div>
                 <div class="slide">
-                    <img src="saad.png" alt="Saad">
+                    <img src="assets/saad.png" alt="Saad">
                 </div>
                 <div class="slide">
-                    <img src="logo.jpg" alt="Alex">
+                    <img src="assets/logo.jpg" alt="Alex"><!--moukadem add your photo-->
                 </div>
             </div>
 
@@ -109,7 +112,32 @@
         </div>
     </section>
     <footer>
-        <p>&copy; 2024 The DOYEN LAB. All rights reserved.</p>
+    
+        <div class="footer-box">
+            <div class="email_box">
+                <h3>Subscribe to Our Newsletter</h3>
+                <div class="sub-email">
+                    <form action="#" method="post">
+                        <input type="email" name="email" id="email" placeholder="Your Email Address" class="email-sub-place"
+                            required>
+                        <button type="submit" class="sub_button" onclick="SaveEmail()">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="logo-footer">
+                <a href="#" onclick="reload()" class="logo-img">
+                    <img src="assets/hasan.png" alt="logo">
+                </a>
+            </div>
+            <div class="info">
+                <h3>Contact Us</h3>
+                <p>123 Street Name, Beirut, Lebanon</p>
+                <p>Email: info@doyenlabs.com</p>
+                <p>Phone: +123 456 7890</p>
+                <br><br><br>
+            </div>
+        </div>
+        <p align="center">&copy; 2024 DOYEN LABS. All rights reserved.</p>
     </footer>
 </body>
 </html>
