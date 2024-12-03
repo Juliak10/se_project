@@ -490,3 +490,73 @@ p {
 ul, ol {
     color: var(--white);
 }
+
+header {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+header p {
+    margin: 3px 0;
+    font-size: 1.0em;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Box Styles */
+.box {
+    width: 280px;
+    height: 280px;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 30px;
+    display: inline;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+    /* Allows vertical resizing only */
+}
+
+.center{
+    justify-self:center;
+    margin: 20px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--columbia-blue);
+    box-shadow: 0 0 5px var(--rich-black);
+}

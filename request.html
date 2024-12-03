@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Closure or Repair Request</title>
+    <style>
+        :root{
+        --rich-black: rgba(13, 31, 45, 1);
+        --blue-ncs: rgba(15, 131, 193, 1);
+        --columbia-blue: rgba(204, 221, 226, 1);
+        --white: #fff;
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to top, rgba(15, 131, 193, 1), rgba(204, 221, 226, 1));
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 600px;
+            margin: 50px auto;
+            background: var(--columbia-blue);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px var(--rich-black);
+        }
+
+        h1 {
+            text-align: center;
+            color:var(--white);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--columbia-blue);
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: var(--blue-ncs);
+            color:var(--white);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: var(--columbia-blue);
+        }
+
+        .box {
+            background-color: var(--columbia-blue);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px var(--rich-black);
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            margin: 20px auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px var(--rich-black);
+        }
+
+        .box a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .box h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .box p {
+            font-size: 14px;
+            color: var(--whit);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#form">
+            <h2>Road Closure or Repair Request</h2>
+            <p>Request a road closure for repair or request for water pipe to be repaired or replaced or road closure
+                for other reasons or request new internet cables or request repair of old cables.</p>
+        </a>
+    </div>
+
+    <div id="form" class="container">
+        <h1>Road Closure or Repair Request Form</h1>
+        <form action="/submit-request" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="reason">Request Type:</label>
+            <select id="reason" name="reason" required>
+                <option value="" disabled selected>Select a request type</option>
+                <option value="road-repair">Road Repair</option>
+                <option value="water-pipe-repair">Water Pipe Repair/Replacement</option>
+                <option value="internet-cable-installation">New Internet Cable Installation</option>
+                <option value="internet-cable-repair">Internet Cable Repair</option>
+                <option value="road-closure">Road Closure</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="location">Request Location (URL):</label>
+            <input type="url" id="location" name="location" placeholder="Enter the location URL (e.g., Google Maps link)" required>
+
+            <label for="details">Details:</label>
+            <textarea id="details" name="details" rows="4" placeholder="Provide more details about your request"
+                required></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+
+</html>
