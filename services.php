@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <title>Services</title>
+    <link rel="stylesheet" href="stylesServices.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="logo">
-            <img src="assets/hasan.png" alt="Logo" class="logo-img">
+            <img src="./assets/hasan (1).png" alt="Logo" class="logo-img">
         </div>
         <ul class="nav-links flex">
-            <li class="hover-link nav-item">Home
-                <ul class="sub-menu">
-                    <li><a class="nav-btn" href="home.html">HOME</a></li>
-                    <li><a class="nav-btn" href="news.html">NEWS PANEL</a></li>
-                    <li><a class="nav-btn" href="info.html">INFORMATION</a></li>
-                </ul>
-            </li>
-            <li><a class="hover-link nav-item" href="forms.html">FORMS AND PETIONS</a></li>
-            <li><a class="hover-link nav-item" href="services.html">SERVICES</a></li>
-            <li><a class="hover-link nav-item" href="about_us.html">ABOUT US</a></li>
-            <li><a class="hover-link nav-item dashboard" href="#">DASHBOARD</a></li>
+            <li><a class="hover-link nav-item" href="home.php">Home</a></li>
+            <li><a class="hover-link nav-item" href="news.php">News Panel</a></li>
+            <li><a class="hover-link nav-item" href="info.php">Information</a></li>
+            <li><a class="hover-link nav-item" href="forms.php">Forms and Petitions</a></li>
+            <li><a class="hover-link nav-item" href="services.php">Services</a></li>
+            <li><a class="hover-link nav-item" href="about_us.php">About Us</a></li>
+            <li><a class="hover-link nav-item" href="#">Dashboard</a></li>
         </ul>
         <div class="profile-icon">
-            <a href="profile.html">
+            <a href="profile.php">
                 <i class='bx bx-user'></i>
             </a>
         </div>
@@ -71,33 +67,8 @@
         </section>
     </main>
     <footer>
-    
-        <div class="footer-box">
-            <div class="email_box">
-                <h3>Subscribe to Our Newsletter</h3>
-                <div class="sub-email">
-                    <form action="#" method="post">
-                        <input type="email" name="email" id="email" placeholder="Your Email Address" class="email-sub-place"
-                            required>
-                        <button type="submit" class="sub_button" onclick="SaveEmail()">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-            <div class="logo-footer">
-                <a href="#" onclick="reload()" class="logo-img">
-                    <img src="assets/hasan.png" alt="logo">
-                </a>
-            </div>
-            <div class="info">
-                <h3>Contact Us</h3>
-                <p>123 Street Name, Beirut, Lebanon</p>
-                <p>Email: info@doyenlabs.com</p>
-                <p>Phone: +123 456 7890</p>
-                <br><br><br>
-            </div>
-        </div>
-        <p align="center">&copy; 2024 DOYEN LABS. All rights reserved.</p>
+        <p>&copy; 
+        2024 The DOYEN LAB. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
