@@ -85,7 +85,7 @@
 
             <div class="logo-footer">
                 <a href="#" onclick="reload()" class="logo-img">
-                <img src="./assets/hasan (1).png" alt="logo">
+                <img src="./assets/hasan.png" alt="logo">
                 </a>
             </div>
             <div class="info">

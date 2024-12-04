@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="./assets/hasan (1).png" alt="Logo" class="logo-img">
+            <img src="./assets/hasan.png" alt="Logo" class="logo-img">
         </div>
         <ul class="nav-links">
             <li><a href="home.php">Home</a></li>
