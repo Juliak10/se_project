@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <img src="hasan.png" alt="logo image" class="sign-in-image">
+    <img src="./assets/hasan.png" alt="logo image" class="sign-in-image">
     <br>
     <div class="wrapper">
         <form id="signin-form" method="POST" action="signin.php">
