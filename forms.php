@@ -1,3 +1,8 @@
+<?php
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+    echo '<div class="success-message" id="success-message">Form submitted successfully!</div>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,4 +96,16 @@
         <p>&copy; 2024 DOYEN LABS. All rights reserved.</p>
     </footer>
 </body>
+
+<script>
+    const successMessage = document.getElementById('success-message');
+    if (successMessage) {
+        setTimeout(() => {
+            successMessage.classList.add('fade-out');
+            setTimeout(() => successMessage.style.display = 'none', 300);
+        }, 3000); // 3 seconds before fading out
+    }
+</script>
+
 </html>
+

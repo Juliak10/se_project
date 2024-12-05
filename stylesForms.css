@@ -7,6 +7,9 @@
     --card-bg: #f8f9fa;
     --btn-bg: #3498db;
     --btn-hover-bg: #217dbb;
+    --success-bg: #d4edda;
+    --success-border: #c3e6cb;
+    --success-text: #155724;
 }
 
 body {
@@ -158,4 +161,25 @@ footer p {
 
 .contact-info {
     text-align: center;
+}
+
+/* Success Message */
+.success-message {
+    background: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid var(--success-border);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.success-message.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
 }
