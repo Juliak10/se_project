@@ -72,9 +72,13 @@
 <body>
     <div class="wrapper">
         <h1>Open Form</h1>
-        <form action="" method="POST">
+        <form action="submit_open_form.php" method="POST">
+            <!-- Hidden fields -->
+            <input type="hidden" name="form_title" value="Open Form">
+            <input type="hidden" name="form_type" value="open_form">
+
             <label for="comments">Request Other Form</label>
-            <textarea id="comments" name="comments" placeholder="Enter any additional information here..." rows="10" required></textarea>
+            <textarea id="comments" name="form_content" placeholder="Enter any additional information here..." rows="10" required></textarea>
             <button type="submit" class="btn" id="submit-btn">Send</button>
         </form>
     </div>

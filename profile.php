@@ -113,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_pic'])) {
                 <form action="profile.php" method="POST" enctype="multipart/form-data" id="upload-form">
                     <input type="file" name="profile_pic" id="file-upload" accept="image/*" style="display: none;">
                     <button type="button" id="upload-btn">Upload Profile Picture</button>
+                    <button type="button" id="change-pass" onclick="window.location.href='Resetpass.php';">Change Password</button>
                     <button type="submit" id="submit-btn" style="display: none;">Submit</button>
                 </form>
 

@@ -144,21 +144,25 @@
     <div class="box">
         <a href="#form">
             <h2>Apply for Permit</h2>
-            <p>Apply for demolition or construction permit or apply for zoning and parking permit.</p>
+            <p>Apply for demolition, construction, zoning, or parking permits.</p>
         </a>
     </div>
 
     <div id="form" class="container">
         <h1>Permit Application Form</h1>
-        <form action="/submit-permit" method="POST">
+        <form action="submit_permit.php" method="POST">
+            <!-- Hidden fields -->
+            <input type="hidden" name="form_title" value="Permit Application">
+            <input type="hidden" name="form_type" value="permit_application">
+
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <input type="text" id="name" name="form_content[name]" placeholder="Enter your full name" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <input type="email" id="email" name="form_content[email]" placeholder="Enter your email address" required>
 
             <label for="permit-type">Permit Type:</label>
-            <select id="permit-type" name="permit-type" required>
+            <select id="permit-type" name="form_content[permit_type]" required>
                 <option value="" disabled selected>Select a permit type</option>
                 <option value="demolition">Demolition Permit</option>
                 <option value="construction">Construction Permit</option>
@@ -168,12 +172,10 @@
             </select>
 
             <label for="location">Permit Location (URL):</label>
-            <input type="url" id="location" name="location"
-                placeholder="Enter the location URL (e.g., Google Maps link)" required>
+            <input type="url" id="location" name="form_content[location]" placeholder="Enter the location URL (e.g., Google Maps link)" required>
 
             <label for="details">Details:</label>
-            <textarea id="details" name="details" rows="4"
-                placeholder="Provide more details about your permit application" required></textarea>
+            <textarea id="details" name="form_content[details]" rows="4" placeholder="Provide more details about your permit application" required></textarea>
 
             <button type="submit">Submit Application</button>
         </form>

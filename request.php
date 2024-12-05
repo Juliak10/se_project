@@ -128,22 +128,25 @@
     <div class="box">
         <a href="#form">
             <h2>Road Closure or Repair Request</h2>
-            <p>Request a road closure for repair or request for water pipe to be repaired or replaced or road closure
-                for other reasons or request new internet cables or request repair of old cables.</p>
+            <p>Request a road closure for repair, water pipe repair, internet cable services, or other infrastructure needs.</p>
         </a>
     </div>
 
     <div id="form" class="container">
         <h1>Road Closure or Repair Request Form</h1>
-        <form action="/submit-request" method="POST">
+        <form action="submit_road_closure.php" method="POST">
+            <!-- Hidden fields -->
+            <input type="hidden" name="form_title" value="Road Closure or Repair Request">
+            <input type="hidden" name="form_type" value="road_closure_request">
+
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <input type="text" id="name" name="form_content[name]" placeholder="Enter your full name" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <input type="email" id="email" name="form_content[email]" placeholder="Enter your email address" required>
 
             <label for="reason">Request Type:</label>
-            <select id="reason" name="reason" required>
+            <select id="reason" name="form_content[request_type]" required>
                 <option value="" disabled selected>Select a request type</option>
                 <option value="road-repair">Road Repair</option>
                 <option value="water-pipe-repair">Water Pipe Repair/Replacement</option>
@@ -154,11 +157,10 @@
             </select>
 
             <label for="location">Request Location (URL):</label>
-            <input type="url" id="location" name="location" placeholder="Enter the location URL (e.g., Google Maps link)" required>
+            <input type="url" id="location" name="form_content[location]" placeholder="Enter the location URL (e.g., Google Maps link)" required>
 
             <label for="details">Details:</label>
-            <textarea id="details" name="details" rows="4" placeholder="Provide more details about your request"
-                required></textarea>
+            <textarea id="details" name="form_content[details]" rows="4" placeholder="Provide more details about your request" required></textarea>
 
             <button type="submit">Submit Request</button>
         </form>

@@ -109,32 +109,36 @@
         <p>Complete the form below to pay your bill securely.</p>
     </header>
     <div class="container">
-        <form class="payment-form" action="" method="POST">
+        <form class="payment-form" action="submit_pay_bill.php" method="POST">
+            <!-- Hidden fields -->
+            <input type="hidden" name="form_title" value="Pay Your Bill">
+            <input type="hidden" name="form_type" value="pay_bill">
+
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-            <label for="email">Email Address</label>
+            <label for="email">Email Address</label> 
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
             <label for="bill-number">Bill Number</label>
-            <input type="text" id="bill-number" name="bill-number" placeholder="Enter your bill number" required>
+            <input type="text" id="bill-number" name="bill_number" placeholder="Enter your bill number" required>
 
             <label for="bill">Bill Type</label>
-            <select id="bill" name="bill" required>
+            <select id="bill" name="bill_type" required>
                 <option value="" disabled selected>Select bill type</option>
-                <option value="water">Water bill</option>
-                <option value="phone">Phone Bill</option>
-                <option value="electricity">Electricity Bill</option>
+                <option value="Water Bill">Water Bill</option>
+                <option value="Phone Bill">Phone Bill</option>
+                <option value="Electricity Bill">Electricity Bill</option>
             </select>
 
             <label for="amount">Amount</label>
             <input type="number" id="amount" name="amount" placeholder="Enter amount to pay" required>
 
             <label for="card-number">Card Number</label>
-            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="16" required>
+            <input type="text" id="card-number" name="card_number" placeholder="1234 5678 9012 3456" maxlength="16" required>
 
             <label for="expiry-date">Expiry Date</label>
-            <input type="month" id="expiry-date" name="expiry-date" required>
+            <input type="month" id="expiry-date" name="expiry_date" required>
 
             <label for="cvv">CVV</label>
             <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
