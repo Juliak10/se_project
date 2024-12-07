@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_pic'])) {
             <li><a href="signup.php">Sign Up</a></li>
             <li><a href="signin.php">Sign In</a></li>
             <li><a href="forms.php">Forms</a></li>
-            <li><a href="about_us.php">About Us</a></li>
+            <li><a href="about_us.php">About Us</a></li>    
             <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="profile-icon">

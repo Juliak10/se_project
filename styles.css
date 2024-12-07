@@ -1,224 +1,181 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+:root {
+    --primary-bg: #ffffff; /* White background for navbar */
+    --primary-text: #2c3e50; /* Deep blue for text */
+    --hover-color: #3498db; /* Light blue for hover */
+    --border-color: #e0e0e0; /* Light gray for border */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background: white;
-    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa; /* Light background for contrast */
+    color: var(--primary-text);
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    background-color: lightgray;
-    padding: 1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    position: fixed;
+    background: var(--primary-bg);
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .logo-img {
-    height: 40px;
-    border-radius: 6px;
+    height: 50px;
+    width: auto;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5em;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
 }
 
 .nav-links a {
-    color: #000000;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
+    color: var(--primary-text);
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+    background-color: var(--hover-color);
+    color: #ffffff;
 }
 
 .profile-icon i {
-    font-size: xx-large;
-    color: #000000;
+    font-size: 24px;
+    color: var(--primary-text);
+    transition: color 0.3s ease;
 }
 
-/* Wrapper */
+.profile-icon i:hover {
+    color: var(--hover-color);
+}
+
 .wrapper {
-    margin-top: 100px;
-    max-width: 700px;
-    width: 90%;
-    background-color: lightgray;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    background: var(--primary-bg);
+    border-radius: 8px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    text-align: center; /* Center all content */
 }
 
-/* Tabs */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+}
+
 .tabs {
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 20px;
-    border-bottom: 2px solid #dddddd;
 }
 
 .tab-button {
     padding: 10px 20px;
     background: none;
     border: none;
-    color: #000000;
+    font-size: 16px;
     font-weight: 600;
+    color: var(--primary-text);
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0 5px;
     border-bottom: 3px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .tab-button.active {
-    color: #000000;
-    border-bottom: 3px solid #000000; /* Highlight active tab */
+    color: var(--hover-color);
+    border-bottom: 3px solid var(--hover-color);
 }
 
-.tab-button:hover {
-    color: #333333;
-}
-
-/* Tab Content */
 .tab-content {
     display: none;
-    text-align: center;
-    padding: 10px 0;
 }
 
 .tab-content.active {
     display: block;
 }
 
-/* Profile Header */
-.profile-header img {
-    width: 150px;
-    height: 150px;
+.profile-info img {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    margin-bottom: 1em;
-    border: 3px solid #000000;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid var(--hover-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-.profile-header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 5px;
+.profile-info h3 {
+    font-size: 20px;
+    color: var(--primary-text);
+    margin-bottom: 10px;
 }
 
-.profile-header p {
-    font-size: 16px;
-    color: #333333;
-}
-
-/* Profile Info Section */
 .profile-info p {
     font-size: 16px;
-    color: #000000;
-    margin: 5px 0;
-    line-height: 1.5;
+    color: var(--primary-text);
 }
 
-.profile-info p strong {
-    font-weight: 600;
-}
-
-/* Buttons */
-#change-pass,
-#upload-btn,
-#submit-btn {
+button {
     display: inline-block;
-    width: 80%;
-    max-width: 250px;
-    padding: 10px;    background: #000000; /* Black button */
+    background: var(--hover-color);
+    color: #fff;
     border: none;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    color: #ffffff; /* White text */
     font-weight: 600;
-    margin: 10px auto;
-    transition: all 0.3s ease;
-    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    margin: 10px;
 }
 
-#change-pass:hover,
-#upload-btn:hover,
-#submit-btn:hover {
-    background: #333333; /* Darker gray for hover */
+button:hover {
+    background-color: #217dbb; /* Slightly darker hover effect */
+    transform: translateY(-2px); /* Adds a slight lift on hover */
+    box-shadow: 0 4px 8px var(--shadow-color); /* Emphasize the shadow */
 }
 
-/* Form Submissions Section */
-.forms-section h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #000000;
-    margin-bottom: 10px;
-    text-align: center;
+.form-submissions {
+    margin-top: 20px;
 }
 
-.forms-section ul {
+.form-submissions h4 {
+    font-size: 18px;
+    color: var(--primary-text);
+}
+
+.form-submissions ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    color: #000000;
 }
 
-.forms-section ul li {
+.form-submissions ul li {
     padding: 10px;
-    border-bottom: 1px solid #dddddd; /* Light gray divider */
+    border-bottom: 1px solid var(--border-color);
+    font-size: 16px;
+    color: var(--primary-text);
 }
 
-.forms-section ul li:last-child {
+.form-submissions ul li:last-child {
     border-bottom: none;
 }
-
-/* Responsive Design */
-@media (max-width: 480px) {
-    .wrapper {
-        padding: 20px;
-    }
-
-    .profile-header h1 {
-        font-size: 20px;
-    }
-
-    .profile-header img {
-        width: 120px;
-        height: 120px;
-    }
-
-    #change-pass,
-    #upload-btn,
-    #submit-btn {
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .tab-button {
-        padding: 8px 10px;
-        font-size: 14px;
-    }
-}
-
-    

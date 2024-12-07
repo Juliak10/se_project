@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Form</title>
+    <title>Apply for Disaster Aid</title>
     <style>
         :root {
             --primary-bg: #ffffff;
@@ -49,6 +49,8 @@
             color: var(--primary-text);
         }
 
+        input,
+        select,
         textarea {
             width: 100%;
             padding: 10px;
@@ -60,9 +62,15 @@
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
+        input:focus,
+        select:focus,
         textarea:focus {
             border-color: var(--hover-color);
             box-shadow: 0 0 5px var(--hover-color);
+        }
+
+        textarea {
+            resize: vertical;
         }
 
         button {
@@ -85,14 +93,32 @@
 
 <body>
     <div class="container">
-        <h1>Open Form</h1>
-        <form action="submit_open_form.php" method="POST">
-            <input type="hidden" name="form_title" value="Open Form">
-            <input type="hidden" name="form_type" value="open_form">
+        <h1>Disaster Aid Application</h1>
+        <form action="submit_disaster_aid.php" method="POST">
+            <input type="hidden" name="form_title" value="Disaster Aid Application">
 
-            <label for="comments">Request Other Form</label>
-            <textarea id="comments" name="form_content" placeholder="Enter any additional information here..." rows="10" required></textarea>
-            <button type="submit">Send</button>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="form_content[name]" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="form_content[email]" placeholder="Enter your email address" required>
+
+            <label for="disaster-type">Disaster Type:</label>
+            <select id="disaster-type" name="form_content[disaster_type]" required>
+                <option value="" disabled selected>Select the disaster type</option>
+                <option value="flood">Flood</option>
+                <option value="earthquake">Earthquake</option>
+                <option value="fire">Fire</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="location">Disaster Location (URL):</label>
+            <input type="url" id="location" name="form_content[location]" placeholder="Enter the location URL (e.g., Google Maps link)" required>
+
+            <label for="details">Details:</label>
+            <textarea id="details" name="form_content[details]" rows="4" placeholder="Provide more details about the disaster" required></textarea>
+
+            <button type="submit">Submit Application</button>
         </form>
     </div>
 </body>

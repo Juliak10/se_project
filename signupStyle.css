@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+:root {
+    --primary-bg: #ffffff; /* White background */
+    --primary-text: #2c3e50; /* Deep blue text */
+    --hover-color: #3498db; /* Light blue hover */
+    --border-color: #e0e0e0; /* Light gray border */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --button-hover: #216ba5; /* Darker blue for buttons */
+    --placeholder-color: #7f8c8d; /* Gray placeholder text */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,16 +22,16 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: white; /* Black to white gradient */
+    background: var(--primary-bg);
+    color: var(--primary-text);
 }
 
 .wrapper {
     width: 420px;
-    background-color: lightgray; /* White background for readability */
+    background-color: var(--primary-bg);
     border-radius: 15px;
     padding: 30px 40px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-    color: #000000; /* Black text for contrast */
+    box-shadow: 0 8px 20px var(--shadow-color);
     text-align: center;
 }
 
@@ -29,9 +39,9 @@ body {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #000000; /* Black text */
+    color: var(--primary-text);
     text-transform: uppercase;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid var(--hover-color);
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -47,9 +57,9 @@ body {
     width: 100%;
     padding: 10px 40px;
     font-size: 14px;
-    color: #000000; /* Black text */
-    background: #f8f8f8; /* Light gray background for fields */
-    border: 1px solid #000000; /* Black border */
+    color: var(--primary-text);
+    background: #f8f9fa; /* Light background for input fields */
+    border: 1px solid var(--border-color);
     border-radius: 25px;
     outline: none;
     appearance: none;
@@ -57,20 +67,20 @@ body {
 }
 
 .input-box input::placeholder {
-    color: #333333; /* Darker gray for placeholder text */
+    color: var(--placeholder-color); /* Placeholder matches the website theme */
 }
 
 .input-box select {
-    color: #000000;
-    background: #f8f8f8; 
-    border: 1px solid #000000;
+    color: var(--primary-text);
+    background: #f8f9fa;
+    border: 1px solid var(--border-color);
     padding-right: 30px;
 }
 
 .input-box select:focus,
 .input-box input:focus {
-    border: 1px solid #666666; /* Slightly lighter black on focus */
-    background: #ffffff; /* White background on focus */
+    border: 1px solid var(--hover-color); /* Highlight input on focus */
+    background: var(--primary-bg); /* White background on focus */
 }
 
 .input-box i {
@@ -78,17 +88,17 @@ body {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #000000; /* Black icons */
+    color: var(--primary-text); /* Icons match the text color */
     font-size: 18px;
 }
 
 .btn {
     width: 100%;
     height: 45px;
-    background: #000000; /* Black button */
+    background: var(--hover-color);
     border: none;
     border-radius: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
     cursor: pointer;
     font-size: 16px;
     color: #ffffff; /* White text on button */
@@ -98,18 +108,18 @@ body {
 }
 
 .btn:hover {
-    background: #333333; /* Darker gray on hover */
+    background: var(--button-hover); /* Darker hover effect */
 }
 
 .signin-link {
     font-size: 14px;
     text-align: center;
     margin-top: 15px;
-    color: #000000; /* Black text */
+    color: var(--primary-text);
 }
 
 .signin-link p a {
-    color: #333333; /* Dark gray for link */
+    color: var(--hover-color);
     text-decoration: none;
     font-weight: 600;
 }

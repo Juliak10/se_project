@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $userId = $_SESSION['firebaseUID'];
-        $formTitle = $_POST['form_title'] ?? 'Permit Application';
-        $formType = $_POST['form_content']['permit_type'] ?? 'permit_application'; // Use permit type as form type
+        $formTitle = $_POST['form_title'] ?? 'Landline Registration';
+        $formType = $_POST['form_content']['landline_plan'] ?? 'landline_registration'; // Use selected plan as form type
         $formContent = json_encode($_POST['form_content'], JSON_UNESCAPED_UNICODE); // JSON-encode the form content
         $submissionDate = date('Y-m-d H:i:s');
         $updatedAt = $submissionDate;
@@ -32,15 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Redirect with a success message as an alert
         echo "<script>
-            alert('Your permit application has been submitted successfully.');
+            alert('Your landline registration has been submitted successfully.');
             window.location.href = 'forms.php';
         </script>";
         exit;
     } catch (Exception $e) {
         // Redirect with an error message as an alert
         echo "<script>
-            alert('An error occurred while submitting your permit. Please try again.');
-            window.location.href = 'permits.php';
+            alert('An error occurred while submitting your landline registration. Please try again.');
+            window.location.href = 'landlineregistration.php';
         </script>";
         exit;
     }

@@ -24,24 +24,6 @@
             color: var(--primary-text);
         }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background: var(--primary-bg);
-            box-shadow: 0 2px 4px var(--shadow-color);
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 24px;
-            color: var(--primary-text);
-        }
-
-        header p {
-            font-size: 16px;
-            color: #7f8c8d;
-        }
-
         .container {
             padding: 30px;
             max-width: 600px;
@@ -104,20 +86,16 @@
 </head>
 
 <body>
-    <header>
-        <h1>Pay Your Bill</h1>
-        <p>Complete the form below to pay your bill securely.</p>
-    </header>
     <div class="container">
+        <h1>Pay Your Bill</h1>
         <form class="payment-form" action="submit_pay_bill.php" method="POST">
-            <!-- Hidden fields -->
             <input type="hidden" name="form_title" value="Pay Your Bill">
             <input type="hidden" name="form_type" value="pay_bill">
 
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-            <label for="email">Email Address</label> 
+            <label for="email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
             <label for="bill-number">Bill Number</label>

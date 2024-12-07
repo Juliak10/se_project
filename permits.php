@@ -24,55 +24,6 @@
             color: var(--primary-text);
         }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background: var(--primary-bg);
-            box-shadow: 0 2px 4px var(--shadow-color);
-        }
-
-        header h1 {
-            font-size: 24px;
-            color: var(--primary-text);
-        }
-
-        header p {
-            font-size: 16px;
-            color: #7f8c8d;
-        }
-
-        .box {
-            background-color: var(--primary-bg);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px var(--shadow-color);
-            width: 300px;
-            text-align: center;
-            padding: 20px;
-            margin: 20px auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px var(--shadow-color);
-        }
-
-        .box a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .box h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--primary-text);
-        }
-
-        .box p {
-            font-size: 14px;
-            color: #7f8c8d;
-        }
-
         .container {
             padding: 30px;
             max-width: 600px;
@@ -141,17 +92,9 @@
 </head>
 
 <body>
-    <div class="box">
-        <a href="#form">
-            <h2>Apply for Permit</h2>
-            <p>Apply for demolition, construction, zoning, or parking permits.</p>
-        </a>
-    </div>
-
-    <div id="form" class="container">
+    <div class="container">
         <h1>Permit Application Form</h1>
         <form action="submit_permit.php" method="POST">
-            <!-- Hidden fields -->
             <input type="hidden" name="form_title" value="Permit Application">
             <input type="hidden" name="form_type" value="permit_application">
 

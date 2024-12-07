@@ -1,8 +1,3 @@
-<?php
-if (isset($_GET['success']) && $_GET['success'] == 1) {
-    echo '<div class="success-message" id="success-message">Form submitted successfully!</div>';
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +20,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
             <li><a href="forms.php">Forms and Petitions</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="about_us.php">About Us</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li><a href="profile.php">Dashboard</a></li>
         </ul>
         <div class="profile-icon">
             <a href="profile.php">
@@ -39,36 +34,47 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
         <p class="page-subtitle">Select the form or petition you need below.</p>
     </header>
     <main class="form-container">
+        <!-- Pay Bill Form -->
         <div class="form-box">
             <a href="PayBillForm.php">
                 <h2>Pay my Bill</h2>
                 <p>Pay your electricity bill, landline bill, or water bill online.</p>
             </a>
         </div>
+        
+        <!-- Landline Registration Form -->
         <div class="form-box">
-            <a href="#">
+            <a href="landlineregistration.php">
                 <h2>Landline Registration</h2>
                 <p>Register a new landline or pay for an existing landline.</p>
             </a>
         </div>
+        
+        <!-- Permit Application Form -->
         <div class="form-box">
             <a href="permits.php">
                 <h2>Apply for Permit</h2>
                 <p>Apply for demolition, construction, zoning, or parking permits.</p>
             </a>
         </div>
+        
+        <!-- Road Closure or Repair Request -->
         <div class="form-box">
             <a href="request.php">
                 <h2>Road Closure or Repair Request</h2>
                 <p>Request road closure for repairs, water pipe repair, or internet cable services.</p>
             </a>
         </div>
+        
+        <!-- Disaster Aid Application -->
         <div class="form-box">
-            <a href="#">
+            <a href="applydisasteraid.php">
                 <h2>Apply for Disaster Aid</h2>
                 <p>Get help with post-disaster repairs or temporary residency.</p>
             </a>
         </div>
+        
+        <!-- Open Form -->
         <div class="form-box">
             <a href="openform.php">
                 <h2>Request Additional Services</h2>
@@ -96,16 +102,11 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
         <p>&copy; 2024 DOYEN LABS. All rights reserved.</p>
     </footer>
 </body>
-
-<script>
-    const successMessage = document.getElementById('success-message');
-    if (successMessage) {
-        setTimeout(() => {
-            successMessage.classList.add('fade-out');
-            setTimeout(() => successMessage.style.display = 'none', 300);
-        }, 3000); // 3 seconds before fading out
-    }
-</script>
-
 </html>
-
+<?php
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+    echo "<script>
+        alert('Bill payed successfully!');
+    </script>";
+}
+?>
