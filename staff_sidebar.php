@@ -5,7 +5,7 @@
     </div>
     <nav>
         <ul>
-            <li><a href="content_management.php">Content Management</a></li>
+            
         </ul>
     </nav>
 </div>
