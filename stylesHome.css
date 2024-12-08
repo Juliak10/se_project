@@ -37,13 +37,9 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px; /* Adds spacing between the links */
+    gap: 20px;
     align-items: center;
     margin: 0;
-}
-
-.nav-links li {
-    display: inline; /* Ensures links are displayed inline */
 }
 
 .nav-links a {
@@ -74,6 +70,7 @@ body {
 .profile-icon i:hover {
     color: var(--hover-color);
 }
+
 
 /* News Section */
 .news-container {

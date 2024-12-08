@@ -39,9 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['firebaseUID'] = $firebaseUID;
                 $_SESSION['email'] = $user['Email'];
                 $_SESSION['first_name'] = $user['First_Name'];
+                $_SESSION['role'] = $user['Role']; // Store user role in session
 
-                // Redirect to profile page
-                header('Location: profile.php');
+                // Redirect based on role
+                if ($user['Role'] == 0) {
+                    header('Location: home.php'); // Redirect to home page for citizens
+                } elseif ($user['Role'] == 1) {
+                    header('Location: dashboard.php'); // Redirect to president dashboard
+                } elseif ($user['Role'] > 1) {
+                    header('Location: staff_dashboard.php'); // Redirect to staff dashboard
+                }
                 exit;
             } else {
                 $error_message = 'No user found with this email address and ID.';
@@ -106,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             apiKey: "AIzaSyCI-jiZK--TwHYoCEPQzXz7NGzcdvhowcw",
             authDomain: "my-beirut.firebaseapp.com",
             projectId: "my-beirut",
-            storageBucket: "my-beirut.firebaseapp.com",
+            storageBucket: "my-beirut.appspot.com",
             messagingSenderId: "911192152729",
             appId: "1:911192152729:web:0309288871a01c80e83608",
             measurementId: "G-4X5L3L11D0"

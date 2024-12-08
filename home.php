@@ -20,7 +20,6 @@
         <li><a class="nav-item" href="forms.php">Forms and Petitions</a></li>
         <li><a class="nav-item" href="services.php">Services</a></li>
         <li><a class="nav-item" href="about_us.php">About Us</a></li>
-        <li><a class="nav-item" href="#">Dashboard</a></li>
     </ul>
     <div class="profile-icon">
         <a href="profile.php">
@@ -28,6 +27,7 @@
         </a>
     </div>
 </nav>
+
 
 
 <main>

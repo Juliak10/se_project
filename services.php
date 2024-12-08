@@ -13,14 +13,13 @@
         <div class="logo">
             <img src="./assets/hasan.png" alt="Logo" class="logo-img">
         </div>
-        <ul class="nav-links flex">
-            <li><a class="hover-link nav-item" href="home.php">Home</a></li>
-            <li><a class="hover-link nav-item" href="news.php">News Panel</a></li>
-            <li><a class="hover-link nav-item" href="info.php">Information</a></li>
-            <li><a class="hover-link nav-item" href="forms.php">Forms and Petitions</a></li>
-            <li><a class="hover-link nav-item" href="services.php">Services</a></li>
-            <li><a class="hover-link nav-item" href="about_us.php">About Us</a></li>
-            <li><a class="hover-link nav-item" href="#">Dashboard</a></li>
+        <ul class="nav-links">
+            <li><a class="nav-item" href="home.php">Home</a></li>
+            <li><a class="nav-item" href="news.php">News Panel</a></li>
+            <li><a class="nav-item" href="info.php">Information</a></li>
+            <li><a class="nav-item" href="forms.php">Forms and Petitions</a></li>
+            <li><a class="nav-item" href="services.php">Services</a></li>
+            <li><a class="nav-item" href="about_us.php">About Us</a></li>
         </ul>
         <div class="profile-icon">
             <a href="profile.php">
@@ -29,7 +28,7 @@
         </div>
     </nav>
     <main>
-        <section id="electricity">
+        <section class="content-box" id="electricity">
             <h2>Electricity</h2>
             <p>Our municipality ensures reliable electricity services for all residents. For assistance or outages, contact:</p>
             <ul>
@@ -38,7 +37,7 @@
                 <li>Service Hours: 24/7</li>
             </ul>
         </section>
-        <section id="landline-internet">
+        <section class="content-box" id="landline-internet">
             <h2>Landline & Internet</h2>
             <p>We partner with local providers to offer affordable landline and internet packages. For more information:</p>
             <ul>
@@ -47,7 +46,7 @@
                 <li>Service Hours: 8:00 AM - 8:00 PM</li>
             </ul>
         </section>
-        <section id="land-zoning">
+        <section class="content-box" id="land-zoning">
             <h2>Land, Construction & Zoning</h2>
             <p>Our zoning office is here to help with land permits, construction guidelines, and zoning regulations. Contact us:</p>
             <ul>
@@ -56,7 +55,7 @@
                 <li>Office Hours: Monday to Friday, 9:00 AM - 5:00 PM</li>
             </ul>
         </section>
-        <section id="water">
+        <section class="content-box" id="water">
             <h2>Water</h2>
             <p>Our municipality provides clean and safe water for all households. For billing or service issues:</p>
             <ul>
@@ -67,8 +66,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 
-        2024 The DOYEN LAB. All rights reserved.</p>
+        <p>&copy; 2024 The DOYEN LAB. All rights reserved.</p>
     </footer>
 </body>
 </html>

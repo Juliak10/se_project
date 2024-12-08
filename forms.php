@@ -9,25 +9,26 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="./assets/hasan.png" alt="Logo" class="logo-img">
-        </div>
-        <ul class="nav-links">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="news.php">News Panel</a></li>
-            <li><a href="info.php">Information</a></li>
-            <li><a href="forms.php">Forms and Petitions</a></li>
-            <li><a href="services.php">Services</a></li>
-            <li><a href="about_us.php">About Us</a></li>
-            <li><a href="profile.php">Dashboard</a></li>
-        </ul>
-        <div class="profile-icon">
-            <a href="profile.php">
-                <i class='bx bx-user'></i>
-            </a>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="logo">
+        <img src="./assets/hasan.png" alt="Logo" class="logo-img">
+    </div>
+    <ul class="nav-links">
+        <li><a class="nav-item" href="home.php">Home</a></li>
+        <li><a class="nav-item" href="news.php">News Panel</a></li>
+        <li><a class="nav-item" href="info.php">Information</a></li>
+        <li><a class="nav-item" href="forms.php">Forms and Petitions</a></li>
+        <li><a class="nav-item" href="services.php">Services</a></li>
+        <li><a class="nav-item" href="about_us.php">About Us</a></li>
+    </ul>
+    <div class="profile-icon">
+        <a href="profile.php">
+            <i class='bx bx-user'></i>
+        </a>
+    </div>
+</nav>
+
+
 
     <header>
         <h1 class="page-title">Forms and Petitions</h1>

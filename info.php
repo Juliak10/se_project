@@ -34,13 +34,14 @@ body {
     background: var(--primary-bg);
     padding: 15px 30px;
     box-shadow: 0 2px 4px var(--shadow-color);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo-img {
-    height: 40px;
+    height: 50px;
     width: auto;
 }
 
@@ -48,27 +49,37 @@ body {
     list-style: none;
     display: flex;
     gap: 20px;
+    align-items: center;
     margin: 0;
-}
-
-.nav-links li {
-    display: inline-block;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--primary-text);
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--hover-color);
+    background-color: var(--hover-color);
+    color: #ffffff;
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
 }
 
 .profile-icon i {
     font-size: 24px;
     color: var(--primary-text);
+    transition: color 0.3s ease;
+}
+
+.profile-icon i:hover {
+    color: var(--hover-color);
 }
 
 .page-title {
@@ -160,25 +171,25 @@ footer p {
 </style>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/hasan.png" alt="Logo" class="logo-img">
-        </div>
-        <ul class="nav-links">
-            <li><a class="hover-link nav-item" href="home.php">Home</a></li>
-            <li><a class="hover-link nav-item" href="news.php">News Panel</a></li>
-            <li><a class="hover-link nav-item" href="info.php">Information</a></li>
-            <li><a class="hover-link nav-item" href="forms.php">Forms and Petitions</a></li> 
-            <li><a class="hover-link nav-item" href="services.php">Services</a></li>
-            <li><a class="hover-link nav-item" href="about_us.php">About Us</a></li>
-            <li><a class="hover-link nav-item" href="#">Dashboard</a></li>
-        </ul>
-        <div class="profile-icon">
-            <a href="profile.html">
-                <i class='bx bx-user'></i>
-            </a>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="logo">
+        <img src="./assets/hasan.png" alt="Logo" class="logo-img">
+    </div>
+    <ul class="nav-links">
+        <li><a class="nav-item" href="home.php">Home</a></li>
+        <li><a class="nav-item" href="news.php">News Panel</a></li>
+        <li><a class="nav-item" href="info.php">Information</a></li>
+        <li><a class="nav-item" href="forms.php">Forms and Petitions</a></li>
+        <li><a class="nav-item" href="services.php">Services</a></li>
+        <li><a class="nav-item" href="about_us.php">About Us</a></li>
+    </ul>
+    <div class="profile-icon">
+        <a href="profile.php">
+            <i class='bx bx-user'></i>
+        </a>
+    </div>
+</nav>
+
 
     <main>
         <section id="garbage">

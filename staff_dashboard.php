@@ -2,6 +2,16 @@
 // Include config for database connection
 require_once 'config.php';
 
+// Define role titles
+$roleTitles = [
+    0 => 'Citizen',
+    2 => 'Electrician',
+    3 => 'Water Supply Manager',
+    4 => 'Waste Management Officer',
+    5 => 'Road Maintenance Worker',
+    6 => 'Public Park Supervisor'
+];
+
 // Fetch users with Role 0 (Citizen)
 $queryCitizens = "SELECT * FROM users WHERE Role = 0";
 $stmtCitizens = $conn->prepare($queryCitizens);
@@ -19,15 +29,6 @@ $queryForms = "SELECT * FROM forms";
 $stmtForms = $conn->prepare($queryForms);
 $stmtForms->execute();
 $forms = $stmtForms->fetchAll(PDO::FETCH_ASSOC);
-
-// Map roles to specific titles
-$roleTitles = [
-    2 => 'Electrician',
-    3 => 'Water Supply Manager',
-    4 => 'Waste Management Officer',
-    5 => 'Road Maintenance Worker',
-    6 => 'Public Park Supervisor'
-];
 ?>
 
 <!DOCTYPE html>
@@ -35,19 +36,19 @@ $roleTitles = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Staff Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesDashboard.css">
+    <link rel="stylesheet" href="styles_staff_dashboard.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!-- Include Sidebar -->
-    <?php include('sidebar.php'); ?>
+    <?php include('staff_sidebar.php'); ?>
 
     <!-- Main Content Area -->
     <div class="main-content">
         <div class="dashboard-header">
-            <h1>My Beirut</h1>
+            <h1>Staff Dashboard</h1>
             <button class="logout-btn" onclick="window.location.href='logout.php'">Logout</button>
         </div>
 
@@ -70,10 +71,9 @@ $roleTitles = [
                         <tr>
                             <td><?php echo htmlspecialchars($user['First_Name'] . ' ' . $user['Last_Name']); ?></td>
                             <td><?php echo htmlspecialchars($user['Email']); ?></td>
-                            <td>Citizen</td>
+                            <td><?php echo $roleTitles[0]; ?></td>
                             <td>
-                                <a href="edit.php?id=<?php echo urlencode($user['User_ID']); ?>" class="btn green">Edit</a>
-                                <button class="btn red delete-user" data-id="<?php echo htmlspecialchars($user['User_ID']); ?>">Delete</button>
+                                <span class="view-only">View Only</span>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -100,14 +100,9 @@ $roleTitles = [
                         <tr>
                             <td><?php echo htmlspecialchars($user['First_Name'] . ' ' . $user['Last_Name']); ?></td>
                             <td><?php echo htmlspecialchars($user['Email']); ?></td>
+                            <td><?php echo htmlspecialchars($roleTitles[$user['Role']] ?? 'Staff'); ?></td>
                             <td>
-                                <?php
-                                    echo isset($roleTitles[$user['Role']]) ? $roleTitles[$user['Role']] : 'Unknown Role';
-                                ?>
-                            </td>
-                            <td>
-                                <a href="edit.php?id=<?php echo urlencode($user['User_ID']); ?>" class="btn green">Edit</a>
-                                <button class="btn red delete-user" data-id="<?php echo htmlspecialchars($user['User_ID']); ?>">Delete</button>
+                                <span class="view-only">View Only</span>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -174,8 +169,8 @@ $roleTitles = [
                             <td><?php echo htmlspecialchars($form['Submission_Date']); ?></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="btn green approve-btn" data-id="<?php echo $form['Form_ID']; ?>">Approve</button>
-                                    <button class="btn red disapprove-btn" data-id="<?php echo $form['Form_ID']; ?>">Disapprove</button>
+                                <button class="btn green approve-btn" data-id="<?php echo $form['Form_ID']; ?>">Approve</button>
+                                <button class="btn red disapprove-btn" data-id="<?php echo $form['Form_ID']; ?>">Disapprove</button>
                                 </div>
                             </td>
                         </tr>
